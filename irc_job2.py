@@ -12,7 +12,7 @@ ssc = StreamingContext(sc, 10)
 # ./irc_wiki.sh | nc -lk 9999
 nc = sys.argv[2] #"10.0.0.1"
 
-nc_port = sys.argv[3] #9999
+nc_port = int(sys.argv[3]) #9999
 
 lines = ssc.socketTextStream(nc, nc_port)
 
