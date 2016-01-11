@@ -14,9 +14,10 @@ Spark Streaming Workshop given by Intel at BGU, Isreal
 1. count the number of wikipedia edits per country
 2. find the max and min edits per country (hint: think what you can do in reduce other than summation)
 
-### based on the irc1.py code, use a window function of 30 seconds length, with slide interval of 10 seconds to:
+### based on the irc1.py code, change the ssc batch interval to 1 sec, and use a window function of 10 seconds length, with slide interval of 1 second to:
 1. count the number of wikipedia edits per country
 2. find the max and min edits per country
+hint: in Spark 1.2.0 window is a bit broken so just use ssc#window
 
 
 
