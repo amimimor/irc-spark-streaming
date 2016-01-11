@@ -3,6 +3,15 @@ import sys
 from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 
+def get_src(lines):
+       src = lines[2].lstrip("#")
+       return src
+
+def parse_line(s):
+       lines = s.split(" ")
+       src = get_src(lines)
+       return lines
+
 master = sys.argv[1] 
 
 sc = SparkContext(master, "IRC streaming")
@@ -16,7 +25,7 @@ nc_port = int(sys.argv[3]) #9999
 
 lines = ssc.socketTextStream(nc, nc_port)
 
-words = lines.flatMap(IRCMethods.parse_line)
+words = lines.flatMap(parse_line)
 
 pairs = words.map(lambda word: (word, 1))
 
