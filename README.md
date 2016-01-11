@@ -12,8 +12,11 @@ Spark Streaming Workshop given by Intel at BGU, Isreal
 ## Exercise 2 - Spark Streaming Application For Wikipedia IRC Stream
 ### based on the irc1.py code:
 1. count the number of wikipedia edits per country
-2. find the max and min edits per country (use DStream#transform)
+2. find the max and min edits per country (hint: think what you can do in reduce other than summation)
 
-### based on the irc1.py code, use window functions to find:
-1. a
-2. b
+### based on the irc1.py code, use a window function of 30 seconds length, with slide interval of 10 seconds to:
+1. count the number of wikipedia edits per country
+2. find the max and min edits per country
+
+
+
