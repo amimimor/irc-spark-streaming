@@ -25,6 +25,9 @@ hint: in Spark 1.2.0 window is a bit broken so just use ssc#window
 
 ### Important Notes:
 .- Spark Streaming using v1.2.0 is not well baked but this is what the cluster offers
+
 .- If you see that the streaming app does a lot of retries in connecting to 'nc' than restart both the app and the 'nc'
+
 .- When using window operations, don't supply a 'large' interval
+
 .- Run using master set to local[*] since 'nc' doesn't handle remote connections well
