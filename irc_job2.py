@@ -4,8 +4,10 @@ from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 
 def get_src(lines):
-       src = lines[2].lstrip("#")
-       return src
+       if len(lines) > 2:
+          src = lines[2].lstrip("#")
+          return src
+       return [""]
 
 def parse_line(s):
        lines = s.split(" ")
