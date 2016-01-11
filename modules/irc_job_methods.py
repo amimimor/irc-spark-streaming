@@ -1,14 +1,14 @@
 #!/usr/bin/python
 class IRCMethods:   
-    @classmethod
-    def get_src(line):
+    @staticmethod
+    def get_src(lines):
        src = lines[2].ltrim("#")
        return src
     
-    @classmethod
+    @staticmethod
     def parse_line(s):
        lines = s.split(" ")
-       src = self.get_src(lines)
+       src = IRCMethods.get_src(lines)
        return lines
 
 
