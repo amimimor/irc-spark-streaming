@@ -17,30 +17,56 @@ def clean_line(line):
     print 'clean: {0}'.format(cleaned)
     return cleaned
 
-def get_src(line):
-    src = re.search("(http.*?)\s", line)
-    if src:
-       return src.group(1)
+def get_url(line):
+    url = re.search("(http.*?)\s", line)
+    if url:
+       return url.group(1)
     else:
-       return "i"
+       return ""
 
 def get_topic(line):
     hit = re.search("\[\[(.*?)\]\]", line)
     if hit:
         #print 'I got hit: {0}'.format(hit.group(1))
         return hit.group(1)
-    else:
-        return ""
+    return ""
+
+def get_irc_channel(line):
+    cha = re.search("\#(\w+)\.wikipedia", line)
+    if cha:
+       return cha.group(1)
+    return ""
+
+def get_mod_flag(line):
+    m = re.search("(.)\shttp", line)
+    if m:
+       return m.group(1)
+    return ""
+
+def get_user(line):
+    user = re.search("\*\s(.*?)\s\*", line)
+    if user:
+       return user.group(1)
+    return ""
 
 def parse_line(s):
        lines = []
        clean = clean_line(s)
-       src = get_src(clean)
+       url = get_url(clean)
        topic  = get_topic(clean)
-       if src:
-         lines.append("!!!!!" + src)
+       cha = get_irc_channel(clean)
+       m = get_mod_flag(clean)
+       user = get_user(clean)
+       if url:
+         lines.append('url: {0}'.format(url))
        if topic:
-         lines.append("??????" + topic)
+         lines.append('topic: {0}'.format(topic))
+       if cha:
+         lines.append('channel: {0}'.format(cha))
+       if m:
+         lines.append('m: {0}'.format(m))
+       if user:
+         lines.append('user: {0}'.format(user))
        return lines
 
 master = sys.argv[1]
