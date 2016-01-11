@@ -10,7 +10,7 @@ Spark Streaming Workshop given by Intel at BGU, Isreal
 3. type word on the first terminal and enter, switch back to the spark streaming app and see if the counts appear
 
 ## Exercise 2 - Spark Streaming Application For Wikipedia IRC Stream
-### based on the irc1.py code, add the following calculation and run:
+### based on the irc1.py code:
 1. count the number of wikipedia line edits per country
 2. find the max and min line edits per country (use DStream#transform)
 
