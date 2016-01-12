@@ -10,7 +10,8 @@ In this workshop we'd like to get first hand experience in running a Spark Strea
 * When using window operations, don't supply a 'large' interval
 
 * Run using master set to local[*] since 'nc' doesn't handle remote connections well
- 
+
+* Make sure you change to output destination before running (make it parameterized) 
 
 ## Exercise 1 - Run a python spark application that performs wordcount on a stream of text
 ### There is no real problem but getting the application running using 'spark-submit'
