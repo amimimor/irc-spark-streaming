@@ -14,7 +14,7 @@ In this workshop we'd like to get first hand experience in running a Spark Strea
 * Make sure you change to output destination before running (make it parameterized) 
 
 ## Exercise 1 - Run a python spark application that performs wordcount on a stream of text
-### There is no real problem but getting the application running using 'spark-submit'
+### use https://spark.apache.org/docs/1.2.0/streaming-programming-guide.html 'A Quick Example' to build a working python executable to be run with spark-submit
 
 1. on one terminal:
     `nc -lk PORT`
