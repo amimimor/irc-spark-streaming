@@ -1,7 +1,7 @@
 #!/usr/bin/python
 """
 run with:
-spark-submit ./irc_job2.py local[2] 10.0.0.1 9999
+spark-submit ./irc1.py local[2] 10.0.0.1 9999
 
 """
 import sys
