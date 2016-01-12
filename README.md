@@ -1,5 +1,6 @@
 # Spark Streaming Workshop given by Intel @ BGU, Isreal 1/12/2016
 
+In this workshop we'd like to get first hand experience in running a Spark Streaming application. Specifically, we would listen on Wikipedia IRC channel of page edits and find interesting things in it using Spark Streaming and SparkSQL
 
 ### Important Notes:
 * Spark Streaming using v1.2.0 is not well baked but this is what the cluster offers
